@@ -26,7 +26,7 @@ if st.button("Informações do usuario"):
                   'foto': st.user.picture,
                   'email':st.user.email,
                   'hora':datetime.now().strftime('%H:%M:%S')}
-    db.collection(colecao).add({informacoes})
+    db.collection(colecao).add(informacoes)
     st.write('Informações salvas')
 
 # READ - Ler documentos  
