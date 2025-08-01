@@ -1,5 +1,6 @@
 import streamlit as st
 import firebase_admin
+from time import datetime
 from firebase_admin import credentials, firestore
 
 st.title("Exemplos CRUD - Firebase")
@@ -18,14 +19,17 @@ db = conectar_firebase()
 colecao = 'usuarios2'
 
 # CREATE - Criar documento
-st.header("CREATE")
+st.header("Coletando informações")
 nome = st.text_input("Nome")
 if st.button("Criar"):
     # Usa email do usuário como ID
-    db.collection(colecao).add({'nome': nome})
+    informacoes={'nome'= st.user.name
+                  'foto': st.user.pictures
+                  'email':=st.user.email
+                  'hora':= datatime.now().strftime('%H:%M:%S')}
+                  }
+    db.collection(colecao).add({informacoes})
     st.write(f"Criado com ID: {st.user.email}")
-
-st.info(f"O ID do documento é o próprio email do usuário logado na coleção '{colecao}'")
 
 # READ - Ler documentos  
 st.header("READ")
