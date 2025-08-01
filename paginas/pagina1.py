@@ -20,15 +20,14 @@ colecao = 'usuarios2'
 
 # CREATE - Criar documento
 st.header("Coletando informações")
-nome = st.text_input("Nome")
-if st.button("Criar"):
+if st.button("Informações do usuario"):
     # Usa email do usuário como ID
     informacoes={'nome': st.user.name,
                   'foto': st.user.pictures,
                   'email':st.user.email,
                   'hora':datetime.now().strftime('%H:%M:%S')}
     db.collection(colecao).add({informacoes})
-    st.write(f"Criado com ID: {st.user.email}")
+    st.write('Informações salvas')
 
 # READ - Ler documentos  
 st.header("READ")
