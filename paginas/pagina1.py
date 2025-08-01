@@ -1,6 +1,6 @@
 import streamlit as st
 import firebase_admin
-from time import datetime
+from datetime import datetime
 from firebase_admin import credentials, firestore
 
 st.title("Exemplos CRUD - Firebase")
