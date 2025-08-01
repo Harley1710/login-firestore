@@ -23,7 +23,7 @@ st.header("Coletando informações")
 if st.button("Informações do usuario"):
     # Usa email do usuário como ID
     informacoes={'nome': st.user.name,
-                  'foto': st.user.pictures,
+                  'foto': st.user.picture,
                   'email':st.user.email,
                   'hora':datetime.now().strftime('%H:%M:%S')}
     db.collection(colecao).add({informacoes})
